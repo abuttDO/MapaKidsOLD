@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="stylesheet" href="%PUBLIC_URL%/static/css/wordfind.css" media="none" onload="if(media!='all')media='all'" />
+    <link rel="stylesheet" type="text/css" charset="UTF-8" href="%PUBLIC_URL%/static/css/slick-1.6.0.min.css" media="none" onload="if(media!='all')media='all'" />
+    <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/static/css/slick-theme-1.6.0.min.css" media="none" onload="if(media!='all')media='all'" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2728e5" />
+    <meta
+            name="description"
+            content="MAPA: Abriendo caminos"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>Mapa Kids - Crear, jugar y aprender</title>
+</head>
+<body>
+<noscript>Por favor, activá javascript en tu navegador</noscript>
+<style>
+    @font-face {
+        font-family:'Averta';
+        src:url('/static/fonts/averta.otf');
+        font-weight: 400;
+        font-style: normal;
+        font-stretch: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family:'Averta Bold';
+        src:url('/static/fonts/averta-bold.otf');
+        font-weight: 800;
+        font-style: normal;
+        font-stretch: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family:'Averta Semibold';
+        src:url('/static/fonts/averta-semibold.otf');
+        font-weight: 400;
+        font-style: normal;
+        font-stretch: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family:'Averta Italic';
+        src:url('/static/fonts/averta-italic.otf');
+        font-weight: 400;
+        font-style: normal;
+        font-stretch: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family:'Averta Thin';
+        src:url('/static/fonts/averta-thin.otf');
+        font-weight: 400;
+        font-style: normal;
+        font-stretch: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family:'DK Lemon Yellow Sun';
+        src:url('/static/fonts/DKLemonYellowSun.eot');
+        src:url('/static/fonts/DKLemonYellowSun.eot?#iefix') format('embedded-opentype'),
+        url('/static/fonts/DKLemonYellowSun.woff2') format('woff2'),
+        url('/static/fonts/DKLemonYellowSun.woff') format('woff'),
+        url('/static/fonts/DKLemonYellowSun.svg#DKLemonYellowSun') format('svg');
+        font-weight: 400;
+        font-style: normal;
+        font-stretch: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family:'Brady Bunch Remastered';
+        src: url('/static/fonts/Brady Bunch Remastered.eot');
+        src: url('/static/fonts/Brady Bunch Remastered.eot?#iefix') format('embedded-opentype'),
+        url('/static/fonts/Brady Bunch Remastered.woff2') format('woff2'),
+        url('/static/fonts/Brady Bunch Remastered.woff') format('woff'),
+        url('/static/fonts/Brady Bunch Remastered.svg#Brady Bunch Remastered') format('svg');
+        font-weight: 400;
+        font-style: normal;
+        font-stretch: normal;
+        unicode-range: U+0020-02DC;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family:'Quattrocento Sans';
+        src:url('/static/fonts/Quattrocento Sans.eot');
+        src:url('/static/fonts/Quattrocento Sans.eot?#iefix') format('embedded-opentype'),
+        url('/static/fonts/Quattrocento Sans.woff2') format('woff2'),
+        url('/static/fonts/Quattrocento Sans.woff') format('woff'),
+        url('/static/fonts/Quattrocento Sans.svg#Quattrocento Sans') format('svg');
+        font-weight: 400;
+        font-style: normal;
+        font-stretch: normal;
+        font-display: swap;
+    }
+
+    .spin {
+        display: flex;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #2727da;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        z-index: 10000;
+    }
+
+    .eyes {
+        width: 45%;
+    }
+
+    @media (max-width: 768px) {
+        .eyes {
+            width: 70% !important;
+            margin-left: 12%;
+        }
+
+        .spin {
+            justify-content: unset;
+        }
+    }
+
+    @keyframes widthbtn {
+        0% {left: -70%;}
+        100% {left: -80%;}
+    }
+    @-o-keyframes widthbtn {
+        0% {left: -70%;}
+        100% {left: -80%;}
+    }
+    @-moz-keyframes widthbtn {
+        0% {left: -70%;}
+        100% {left: -80%;}
+    }
+    @-webkit-keyframes widthbtn {
+        0% {left: -70%;}
+        100% {left: -80%;}
+    }
+
+    .btn-mid:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -90%;
+        height: 100%;
+        width: 150%;
+        background-image: url('../static/img/btn.svg');
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .btn-alt:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -90%;
+        height: 100%;
+        width: 150%;
+        background-image: url('../static/img/btn-1.svg') !important;
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .btn-gallery:before {
+        animation-duration: 1s;
+        animation-name: widthbtn;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        transition: all 0.2s ease-in-out;
+        -webkit-transition: all 0.2s ease-in-out;
+    }
+
+    .acti-bg {
+        background-image: url('/static/img/exploregallery/acti-bg.png');
+        background-size: cover;
+    }
+
+    .home-bg {
+        background-image: url('/static/img/home/home-bg.jpg');
+        background-size: cover;
+    }
+
+    .ambiental-bg {
+        background-image: url('/static/img/exploregallery/ambiental-bg.png');
+    }
+
+    .colaboracion-bg {
+        background-image: url('/static/img/exploregallery/colaboracion-bg.png');
+    }
+
+    .autoestima-bg {
+        background-image: url('/static/img/exploregallery/autoestima-bg.png');
+    }
+
+    .entrance-bg {
+        background-image: url('/static/img/kidsgallery/entrance.png');
+    }
+
+    .entrance-bg-alt {
+        background-image: url('/static/img/kidsgallery/entrance-alt.png');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+
+    .autoestima-kids-bg {
+        background-image: url('/static/img/kidsgallery/autoestima/bg.png');
+    }
+
+    .colaboracion-kids-bg {
+        background-image: url('/static/img/kidsgallery/colaboracion/bg.png');
+    }
+
+    .generosidad-kids-bg {
+        background-image: url('/static/img/kidsgallery/generosidad/bg.png');
+    }
+
+    .ambiental-kids-bg {
+        background-image: url('/static/img/kidsgallery/ambiental/bg.png');
+    }
+
+    .generosidad-bg {
+        background-image: url('/static/img/exploregallery/generosidad-bg.png');
+    }
+
+    .ambiental-bg-vert {
+        background-image: url('/static/img/exploregallery/ambiental-bg-vert.png');
+    }
+
+    .colaboracion-bg-vert {
+        background-image: url('/static/img/exploregallery/colaboracion-bg-vert.png');
+    }
+
+    .autoestima-bg-vert {
+        background-image: url('/static/img/exploregallery/autoestima-bg-vert.png');
+    }
+
+    .generosidad-bg-vert {
+        background-image: url('/static/img/exploregallery/generosidad-bg-vert.png');
+    }
+
+    .autoestima-sub-bg {
+        background-image: url('/static/img/exploregallery/autoestima/acti-sub.png');
+    }
+
+    .autoestima-vid-bg {
+        background-image: url('/static/img/exploregallery/autoestima/acti-vid-bg.png');
+    }
+
+    .generosidad-sub-bg {
+        background-image: url('/static/img/exploregallery/generosidad/acti-sub.png');
+    }
+
+    .generosidad-vid-bg {
+        background-image: url('/static/img/exploregallery/generosidad/acti-vid-bg.png');
+    }
+
+    .colaboracion-sub-bg {
+        background-image: url('/static/img/exploregallery/colaboracion/acti-sub.png');
+    }
+
+    .colaboracion-vid-bg {
+        background-image: url('/static/img/exploregallery/colaboracion/acti-vid-bg.png');
+    }
+
+    .ambiental-sub-bg {
+        background-image: url('/static/img/exploregallery/ambiental/acti-sub.png');
+    }
+
+    .ambiental-vid-bg {
+        background-image: url('/static/img/exploregallery/ambiental/acti-vid-bg.png');
+    }
+
+    .ssg-bg3 {
+        background-image: url('/static/img/exploregallery/galeria-fondo-3.jpg');
+    }
+
+    .es-btn {
+        background-image: url('/static/img/exploresub/es-btn.png');
+    }
+    
+    .es-btn:hover {
+        background-image: url('/static/img/exploresub/es-btn-h.png');
+    }
+
+    .gu-btn {
+        background-image: url('/static/img/exploresub/gu-btn.png');
+    }
+
+    .gu-btn:hover {
+        background-image: url('/static/img/exploresub/gu-btn-h.png');
+    }
+
+    .gallery-btn {
+        background-image: url('/static/img/exploresub/gallery-btn.png');
+    }
+
+    .gallery-btn:hover {
+        background-image: url('/static/img/exploresub/gallery-btn-h.png');
+    }
+
+    .close-btn {
+        background-image: url('/static/img/exploresub/close-btn.png');
+    }
+
+    .play-btn {
+        background-image: url('/static/img/games/btn-play.png');
+    }
+
+    .again-btn {
+        background-image: url('/static/img/games/btn-again.png');
+    }
+
+    .close-btn:hover {
+        background-image: url('/static/img/exploresub/close-btn-h.png');
+    }
+
+    .full-btn {
+        background-image: url('/static/img/exploresub/full-btn.png');
+        min-width: 200px;
+    }
+
+    .full-btn:hover {
+        background-image: url('/static/img/exploresub/full-btn-h.png');
+    }
+
+    .nav-bg {
+        background-image: url('/static/img/nav-bg.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .bg-game-d {
+        background-image: url('/static/img/games/games-bg-d.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+        max-width: unset;
+    }
+
+    .bg-game-n {
+        background-image: url('/static/img/games/games-bg-n.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+        max-width: unset;
+    }
+
+    .bg-unk-d {
+        background-image: url('/static/img/games/bg-d.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .bg-unk-n {
+        background-image: url('/static/img/games/bg-n.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .compass-bg {
+        background-image: url('/static/img/compass/compass-bg.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+</style>
+<div class="spin" id="spinner">
+    <img class="eyes" alt="cargando" src="%PUBLIC_URL%/static/img/logo-1.gif" />
+</div>
+<div id="root"></div>
+<script>
+    document.onreadystatechange = function () {
+        if (document.readyState === "complete") {
+            document.getElementById("spinner").style.display = "none";
+        } else {
+            document.getElementById("spinner").style.display = "flex";
+        }
+    };
+    window.onbeforeunload = function () {
+        document.getElementById("spinner").style.display = "flex";
+    };
+    function showSpin() {
+        document.getElementById("spinner").style.display = "flex";
+    }
+    function hideSpin() {
+        document.getElementById("spinner").style.display = "none";
+    }
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('serviceWorker.js', { scope: '/' }).then(function(reg) {
+            //console.log('Registro exitoso. Scope: ' + reg.scope);
+        }).catch(function(error) {
+            //console.log('Registro fallido: ' + error);
+        });
+    }
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-REMEWJN840"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-REMEWJN840');
+</script>
+</body>
+</html>

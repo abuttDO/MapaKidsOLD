@@ -1,0 +1,24 @@
+.wfparent {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+#puzzle {
+    background: white;
+    border: 0;
+    border-radius: 4px;
+    box-shadow: rgb(0 0 0 / 20%) 0 1px 2px 0;
+}
+
+.puzzleSquare {
+    font-family: "Averta", sans-serif !important;
+    font-size: .80em !important;
+}
+
+.word {
+    color: #2728e5;
+    filter: drop-shadow(0 0 5px white);
+    font-weight: bold;
+    font-family: "Averta", sans-serif !important;
+}

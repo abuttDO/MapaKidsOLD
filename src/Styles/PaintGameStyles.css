@@ -1,0 +1,78 @@
+#paint {
+    cursor: crosshair;
+    background: white;
+    box-shadow: rgb(0 0 0 / 20%) 0 1px 2px 0;
+}
+
+.color-btn {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    box-shadow: rgb(0 0 0 / 20%) 0 1px 2px 0;
+    border: 4px solid rgba(255, 255, 255, 0.13);
+    opacity: .9;
+}
+
+.color-btn-alt {
+    width: 80%;
+    box-shadow: rgb(0 0 0 / 20%) 0 1px 2px 0;
+    border: 4px solid rgba(255, 255, 255, 0.13);
+    opacity: .9;
+    color: white;
+    background: black;
+}
+
+.color-btn.active, .color-btn-alt.active {
+    border: 4px solid white;
+    opacity: 1;
+}
+
+.color-btn-con > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.color-btn-con {
+    flex-wrap: wrap;
+    width: 91%;
+    margin: 0;
+    padding: 5px 0 0;
+    border-top: 1px solid #191995;
+    background: #2728e5;
+    box-shadow: rgb(0 0 0 / 20%) 0 1px 2px 0;
+}
+
+.canva-super {
+    display: contents;
+}
+
+.super-con {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paint-flex {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.canva-con {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paint-flex {
+    padding-top: 50px;
+}
+
+@media (max-width: 768px) {
+    .paint-flex {
+        padding-top: 0 !important;
+    }
+}

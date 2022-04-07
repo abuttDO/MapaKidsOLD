@@ -1,0 +1,28 @@
+.h-beans-background {
+    width: -moz-available;
+    width: -webkit-fill-available;
+    width: available;
+    height: auto;
+    object-fit: contain;
+}
+
+.h-master {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.h-section {
+    height: 100vh;
+    width: -moz-available;
+    width: -webkit-fill-available;
+    width: available;
+}
+
+.contain-img {
+    height: auto;
+    object-fit: contain;
+}

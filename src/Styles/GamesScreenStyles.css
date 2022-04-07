@@ -1,0 +1,143 @@
+.unk-con {
+    width: 50vw;
+    height: 100vh;
+    position: relative;
+    margin: 0 auto;
+}
+
+.unk-con-d1 {
+    margin: 0 auto 0 0 !important;
+}
+
+.unk-c1, .unk-c2 {
+    width: 50vw;
+    height: 100vh;
+    object-fit: contain;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.bg-unk {
+    overscroll-behavior: contain;
+    overflow: hidden;
+}
+
+.zoom-bar {
+    position: fixed;
+    z-index: 999;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+}
+
+.scrollable {
+    overflow: scroll;
+    user-select: none;
+    scroll-behavior: smooth;
+}
+
+.c-grab {
+    cursor: grab;
+    user-select: none;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+        width: 1.95vw;
+        height: 1.95vw;
+    }
+}
+
+.btn-access {
+    width: 2vw;
+    height: 2vw;
+    background: rgba(255, 255, 255, 0.67);
+    border-radius: 50%;
+    animation: blinker 2s linear infinite;
+}
+
+.btn-lag-letras {
+    position: absolute;
+    left: 17.5vw;
+    top: 44vh;
+}
+
+.game-pop-img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+.btn-bos-memoria {
+    position: absolute;
+    left: 28.5vw;
+    top: 53vh;
+}
+
+.btn-sendero {
+    position: absolute;
+    left: 13vw;
+    top: 35vh;
+}
+
+.btn-mont {
+    position: absolute;
+    left: 33vw;
+    top: 36vh;
+}
+
+.zo, .zi {
+    padding: 0 !important;
+    display: flex;
+    margin-bottom: -5px;
+    user-select: none;
+}
+
+.zo {
+    justify-content: flex-start;
+}
+
+.zi {
+    justify-content: flex-end;
+}
+
+.zo img, .zi img {
+    width: 20vw;
+    height: auto;
+    cursor: pointer;
+    user-select: none;
+}
+
+.zo img:hover, .zi img:hover {
+    opacity: .9;
+}
+
+.zo img, .zi img {
+    width: 30vw;
+    height: auto;
+    cursor: pointer;
+    user-select: none;
+}
+
+.unk-con {
+    width: 100vw;
+    height: auto;
+    position: relative;
+    margin: 0 auto;
+}
+
+.unk-c1-mv, .unk-c2-mv {
+    width: 100vw;
+    height: auto;
+    object-fit: contain;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.games-modal-title {
+    font-family: "Averta Bold", sans-serif;
+    margin-top: 10px;
+}

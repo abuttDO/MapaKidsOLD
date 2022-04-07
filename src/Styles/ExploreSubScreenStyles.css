@@ -1,0 +1,155 @@
+.ReactModal__Overlay {
+    z-index: 20;
+    background: rgb(0 0 0 / 86%) !important;
+}
+
+.ReactModal__Content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 0 !important;
+    background: none !important;
+}
+
+.ReactModal__Content button {
+    width: min-content;
+    margin: 10px 0 0 0;
+}
+
+.bg-item {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0;
+    background-size: cover !important;
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+}
+
+.bg-fore {
+    z-index: 3;
+    pointer-events: none;
+}
+
+.bg-land {
+    width: 100vw;
+    height: 100vh !important;
+}
+
+.bg-vert, .sub-con-vert {
+    height: 100vh !important;
+    width: 130vh !important;
+    max-width: unset;
+}
+
+.sub-con-vert {
+    overscroll-behavior: contain;
+    overflow: scroll;
+}
+
+.explore-con {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: scroll;
+}
+
+.sub-con {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 6;
+}
+
+.bg3 {
+    position: absolute;
+    left: 42.5vw;
+    top: calc(45vh - 15vw);
+    z-index: 5;
+    width: 15vw;
+    height: auto;
+}
+
+.bg4 {
+    position: absolute;
+    left: 30vw;
+    top: 55vh;
+    z-index: 5;
+    width: 25vw;
+    height: 40vh;
+}
+
+.sub-gallery, .sub-info {
+    width: 30vw;
+    height: 30vw;
+    cursor: pointer;
+    transition: ease-in-out 1s;
+    filter: drop-shadow(0 0 1px black);
+}
+
+.sub-gallery:hover {
+    transform: rotate(360deg);
+    transition: ease-in-out 1s;
+}
+
+.sub-info:hover {
+    transform: rotate(180deg);
+    transition: ease-in-out 1s;
+}
+
+.left-con {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.left-con > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sub-info-extra, .sub-gallery-extra {
+    width: 60vw;
+    height: auto;
+}
+
+.bg3-extra {
+    width: 30vw;
+    left: 35vw;
+    top: 43vh;
+}
+
+.in-btn-extra {
+    top: 21vh !important;
+}
+
+.out-btn-extra {
+    top: 73vh !important;
+}
+
+.in-btn {
+    position: absolute;
+    top: 45vh;
+    z-index: 30;
+}
+
+.out-btn {
+    position: absolute;
+    top: 45vh;
+    z-index: 30;
+}
+
+@media (max-width: 768px) {
+    .bg-item {
+        min-height: 100vh;
+        width: auto;
+        min-width: 100vw;
+        object-fit: cover;
+    }
+}

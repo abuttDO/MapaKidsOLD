@@ -1,0 +1,64 @@
+.container.puz {
+    height: 100vh;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.container .game {
+    position: absolute;
+    top: calc(50vh - 200px);
+    left: calc(50vw - 148px);
+}
+
+.puzzle-hint {
+    width: 95px;
+    border-radius: 4px;
+    height: 95px;
+    object-fit: cover;
+    object-position: top;
+    margin-top: 410px;
+    border: 5px solid #2728e5;
+    box-shadow: rgba(0,0,0,0.2) 0 1px 2px 0;
+}
+
+.puz b {
+    color: #2728e5;
+}
+
+.container .game .cell {
+    width: 85px;
+    height: 85px;
+    left: 0;
+    top: 0;
+    border-radius: 4px;
+    background: none;
+    box-shadow: rgba(0,0,0,0.2) 0 1px 2px 0;
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+    position: absolute;
+}
+
+.container .empty {
+    opacity: 0;
+}
+
+.piece {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.winpuzzle {
+    height: 40vh;
+    width: auto;
+    object-fit: contain;
+}
